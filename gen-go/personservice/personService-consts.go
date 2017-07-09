@@ -7,7 +7,7 @@ import (
 	"bytes"
 	"fmt"
 	"git.apache.org/thrift.git/lib/go/thrift"
-	"person"
+	"thrifty/gen-go/person"
 
 )
 
@@ -20,4 +20,3 @@ var _ = person.GoUnusedProtection__
 
 func init() {
 }
-

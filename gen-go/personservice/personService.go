@@ -7,7 +7,7 @@ import (
 	"bytes"
 	"fmt"
 	"git.apache.org/thrift.git/lib/go/thrift"
-	"person"
+	"thrifty/gen-go/person"
 
 )
 
@@ -360,5 +360,3 @@ func (p *PersonServiceGetResult) String() string {
   }
   return fmt.Sprintf("PersonServiceGetResult(%+v)", *p)
 }
-
-
