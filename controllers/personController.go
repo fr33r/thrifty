@@ -1,9 +1,9 @@
 package controllers
 
 import(
-  "thrifty/gen-go/person"
+  "thrifty/gen-go/thrifty"
 )
 
 type PersonController interface {
-  Get() (*person.Person, error)
+  Get() (*thrifty.Person, error)
 }

@@ -13,11 +13,9 @@ import (
         "strconv"
         "strings"
         "git.apache.org/thrift.git/lib/go/thrift"
-	"person"
-        "personservice"
+        "thrifty"
 )
 
-var _ = person.GoUnusedProtection__
 
 func Usage() {
   fmt.Fprintln(os.Stderr, "Usage of ", os.Args[0], " [-h host:port] [-u url] [-f[ramed]] function [arg1 [arg2...]]:")
@@ -111,7 +109,7 @@ func main() {
     Usage()
     os.Exit(1)
   }
-  client := personservice.NewPersonServiceClientFactory(trans, protocolFactory)
+  client := thrifty.NewPersonServiceClientFactory(trans, protocolFactory)
   if err := trans.Open(); err != nil {
     fmt.Fprintln(os.Stderr, "Error opening socket to ", host, ":", port, " ", err)
     os.Exit(1)

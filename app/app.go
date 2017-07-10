@@ -3,7 +3,7 @@ package app
 import (
 	"fmt"
 	"git.apache.org/thrift.git/lib/go/thrift"
-	"thrifty/gen-go/personservice"
+	"thrifty/gen-go/thrifty"
 	"thrifty/controllers"
 )
 
@@ -14,11 +14,11 @@ func (app *App) Startup() {
 
 	addr := "localhost:9090"
 
-	transportFactory := thrift.NewTTransportFactory()
+	transportFactory := thrift.NewTBufferedTransportFactory(8192)
 	protocolFactory := thrift.NewTSimpleJSONProtocolFactory()
 
 	controller := &controllers.EmployeeController{}
-	processor := personservice.NewPersonServiceProcessor(controller)
+	processor := thrifty.NewPersonServiceProcessor(controller)
 	transport, _ := thrift.NewTServerSocket(addr)
 	server := thrift.NewTSimpleServer4(processor, transport, transportFactory, protocolFactory)
 	server.Serve()

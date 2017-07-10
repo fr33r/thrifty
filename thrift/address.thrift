@@ -1,3 +1,6 @@
+namespace java com.thrifty.gen
+namespace go thrifty
+
 /**
  * Represents an address.
  */

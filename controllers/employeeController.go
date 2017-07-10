@@ -1,11 +1,11 @@
 package controllers
 
 import(
-  "thrifty/gen-go/person"
+  "thrifty/gen-go/thrifty"
 )
 
 type EmployeeController struct{}
 
-func(employeeController *EmployeeController) Get() (*person.Person, error) {
-  return &person.Person{}, nil
+func(employeeController *EmployeeController) Get() (*thrifty.Person, error) {
+  return &thrifty.Person{}, nil
 }
